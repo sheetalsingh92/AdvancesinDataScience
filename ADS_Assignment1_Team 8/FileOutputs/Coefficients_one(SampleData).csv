@@ -1,0 +1,9 @@
+,x
+(Intercept),138.4046828
+hour,0.78862426
+Temperature,0.083834012
+month,-0.597378264
+day,-0.441151326
+Peakhour,-114.1596266
+DayofWeek,5.074066893
+WeekDay,70.58941923
