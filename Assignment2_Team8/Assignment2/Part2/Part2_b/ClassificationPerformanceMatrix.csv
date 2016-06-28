@@ -1,0 +1,11 @@
+,No,Yes,,,
+Above_Normal,254,441,,Error,0.75
+Optimal,1070,239,,,
+,Classification Tree,,,,
+Above_Normal,1492,1273,,Error,0.24
+Optimal,679,4372,,,
+,,,,,
+,Neural Network,,,,
+,Above_Normal,Optimal,,,
+Above_Normal,4238,1289,,,
+Optimal,5674,677,,,

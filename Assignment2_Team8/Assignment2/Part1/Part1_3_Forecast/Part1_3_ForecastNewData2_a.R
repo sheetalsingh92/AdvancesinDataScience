@@ -1,0 +1,32 @@
+data<- read.csv(file.choose(),header = T)
+df <- data.frame(data)
+install.packages("lubridate")
+library(lubridate)
+View(df)
+Year<-year(as.Date(df$Day, format="%m/%d/%Y"))
+View(Year)
+Month<-month(as.Date(df$Day, format="%m/%d/%Y"))
+View(Month)
+Day1<-day(as.Date(df$Day, format="%m/%d/%Y"))
+
+View(Day1)
+df_1 <- cbind(df ,Year,Month,Day1)
+
+View(df_1)
+ordereddata_weekday <-(wday(as.Date(df_1$Day, format="%m/%d/%Y")))-1
+ordereddata1<-cbind(df_1,ordereddata_weekday)
+View(ordereddata1)
+ordereddata_weekend<-NA
+ordereddata2<-cbind(ordereddata1,ordereddata_weekend)
+ordereddata_weekend<- ifelse( ordereddata1$ordereddata_weekday == 0 | ordereddata1$ordereddata_weekday == 6 , 0 , 1)
+##warnings()
+ordereddata2<-cbind(ordereddata1,ordereddata_weekend)
+View(ordereddata2)
+ordereddata_peakhours <-NA
+finalforecastdata<-cbind(ordereddata1,ordereddata_weekend,ordereddata_peakhours)
+ordereddata_peakhours <- ifelse( as.numeric(ordereddata1$Hour) > 6 &  as.numeric(ordereddata1$Hour) < 20 , 1 , 0)
+finalforecastdata<-cbind(ordereddata1,ordereddata_weekend,ordereddata_peakhours)
+finalforecastdata_1 <- cbind(finalforecastdata$Day, finalforecastdata$Month,finalforecastdata$Day,finalforecastdata$Year,finalforecastdata$Hour,finalforecastdata$ordereddata_weekday,finalforecastdata$ordereddata_weekend,finalforecastdata$ordereddata_peakhours,finalforecastdata$Temp)
+colnames(finalforecastdata_1)<-c("Date","month","Day","Year", "Hour","Day of Week","WeekDay","Peakhour","Temperature")
+View(finalforecastdata_1)
+write.csv(finalforecastdata_1,file="Forecastinputnewdata2_3a.csv",row.names = FALSE)
