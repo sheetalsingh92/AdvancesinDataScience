@@ -1,0 +1,15 @@
+Regression,,,,,,,,,,
+,,,,,,,,,,
+StoreType,Year,Month,DayofWeek,StateHoliday,SchoolHoliday,Assortment,CompetitionDistance,Promo2Indicator,Promo,Sales
+a,2016,12,Mon,a,1,a,111,1,1,10096.15
+b,2017,12,Sat,b,1,c,180,1,1,11447.31
+c,2016,6,Weekday,d,0,b,122,1,0,5588.59
+d,2018,7,Sun,0,0,b,88,0,1,7323.7
+,,,,,,,,,,
+Classification,,,,,,,,,,
+,,,,,,,,,,
+StoreType,Year,Month,DayofWeek,StateHoliday,SchoolHoliday,Assortment,CompetitionDistance,Promo2Indicator,Promo,Sales
+a,2016,12,Mon,a,1,a,111,1,1,Above Average
+b,2017,12,Sat,b,1,c,180,1,1,Above Average
+c,2016,6,Weekday,d,0,b,122,1,0,Below Average
+d,2018,7,Sun,0,0,b,88,0,1,Above Average
